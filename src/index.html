@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+
+<body>
+
+  <div id="browser-not-supported" class="support">
+    <h3 class="support__message">Your browser is not supported</h3>
+    <p class="support__info">TypeSpaceArcade only works with Chromium based browsers</p>
+    <a class="support__link" target="_blank" rel="noopener noreferrer"
+      href="https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel#Browser_compatibility">More
+      information</a>
+  </div>
+
+  <div id="device-not-supported" class="support">
+    <h3 class="support__message">TypeSpaceArcade is not available for small screen devices</h3>
+  </div>
+
+  <div id="app">
+
+    <div class="menu-container"></div>
+
+    <div class="card" id="help">
+      <div class="card-container">
+        <button class="tsa-btn tsa-btn--outline card-close">X</button>
+        <div class="card__title">How to play</div>
+        <div class="card__content">
+          <div class="card-topic__title">Controls</div>
+          <div class="card-topic__content">
+            <div class="card-topic__sub-title">Move</div>
+            <table class="move-keys" cellspacing="10">
+              <tr>
+                <td></td>
+                <td>&#8593;</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>&#8592;</td>
+                <td>&#8595;</td>
+                <td>&#8594;</td>
+              </tr>
+            </table>
+            <div class="card-topic__sub-title">Stop</div>
+            <div class="stop-key">&#8679;</div>
+          </div>
+          <div class="card-topic__title">Attacks</div>
+          <div class="card-topic__content">
+            <p>
+              To attack your opponents you need to type the words on your screen
+            </p>
+            <div class="card-topic__sub-title">Simple Attack</div>
+            <img src="src/img/simple-attack-1.png">
+            <img src="src/img/simple-attack-2.png">
+            <div class="card-topic__sub-title">ULTIMATE</div>
+            <p>
+              The ULTIMATE attack takes a while to charge, and resets when you type the wrong letter.
+            </p>
+            <img src="src/img/ultimate-1.png">
+            <img src="src/img/ultimate-2.png">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" id="info">
+    <div class="card-container">
+
+      <button class="tsa-btn tsa-btn--outline card-close">X</button>
+      <div class="card__title">Info</div>
+      <div class="card__content">
+        <div class="card-topic__title">Type Space Arcade</div>
+        <div class="card-topic__content">
+          <p>A space Typing game that uses a Peer-to-Peer connection</p>
+          <p>Version: <%= htmlWebpackPlugin.options.version %></p>
+        </div>
+        <div class="card-topic__sub-title">Built with:</div>
+        <div class="card-topic__content">
+          <ul>
+            <li><a href="https://phaser.io/">Phaser3</a></li>
+            <li><a href="https://peerjs.com/">Peerjs</a></li>
+            <li><a href="https://webpack.js.org/">Webpack</a></li>
+            <li><a href="https://github.com/words/an-array-of-english-words">an-array-of-english-words</a></li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="game-over">
+    <div class="game-over__container">
+      <h3 class="game-over__text"></h3>
+      <span class="game-over__leave tsa-link">Leave</span>
+    </div>
+  </div>
+
+  <div class="game-wrapper">
+    <div class="game">
+      <div class="game-background">
+        <div class="game-header">
+          <h4 class="game-header__username">Manuel Goulão</h4>
+          <div class="game-header__spacer"></div>
+          <div class="game-header__options">
+            <ul class="buttons-list">
+              <li>
+                <div class="tri-button" id="game-help">
+                  <div class="tri-button--outer"></div>
+                  <div class="tri-button--inner"></div>
+                  <div class="tri-button--content">&#63;</div>
+                </div>
+              </li>
+              <li>
+                <div class="tri-button upside" id="game-info">
+                  <div class="tri-button--outer"></div>
+                  <div class="tri-button--inner"></div>
+                  <div class="tri-button--content">&#105;</div>
+                </div>
+              </li>
+              <li>
+                <div class="tri-button" id="game-leave">
+                  <div class="tri-button--outer"></div>
+                  <div class="tri-button--inner"></div>
+                  <div class="tri-button--content">x</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- End Game Header -->
+
+        <div class="game-content">
+          <div id="game"></div>
+        </div>
+        <div class="game-commands">
+          <div class="game-commands__option" id="player1">
+            <div class="game-command__username">
+              <!-- Player Title -->
+            </div>
+            <div class="game-command__text">
+              <!-- Simple attack -->
+            </div>
+          </div>
+          <div class="game-commands__option" id="player2">
+            <div class="game-command__username">
+              <!-- Player Title -->
+            </div>
+            <div class="game-command__text">
+              <!-- Simple attack -->
+            </div>
+          </div>
+          <div class="game-commands__option game-commands__option--ulti" id="ulti">
+            <div class="ulti-load-background"></div>
+            <div class="game-command__text"></div>
+          </div>
+          <div class="game-commands__option" id="player3">
+            <div class="game-command__username">
+              <!-- Player Title -->
+            </div>
+            <div class="game-command__text">
+              <!-- Simple attack -->
+            </div>
+          </div>
+          <div class="game-commands__option" id="player4">
+            <div class="game-command__username">
+              <!-- Player Title -->
+            </div>
+            <div class="game-command__text">
+              <!-- Simple attack -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

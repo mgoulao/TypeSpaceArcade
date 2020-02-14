@@ -1,0 +1,111 @@
+.card {
+	position: absolute;
+	width: 700px;
+	height: 600px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: 4px solid var(--primary-color);
+	border-radius: 14px;
+	background: #000;
+	display: none;
+	padding: 1px;
+	box-sizing: border-box;
+	z-index: 3;
+}
+
+::-webkit-scrollbar {
+	width: 22px;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+	background: var(--scrollbar-background);
+	border: 8px solid #000;
+	border-radius: 50px;
+}
+
+.card.active {
+	display: block;
+}
+
+.card-container {
+	position: relative;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+}
+
+.card-close {
+	position: absolute;
+	top: 16px;
+	left: 16px;
+}
+
+.card__title {
+	position: absolute;
+	top: 18px;
+	left: 64px;
+	font-size: 1.5rem;
+}
+
+.card__content {
+	width: 100%;
+	margin: 82px 64px;
+}
+
+.card-topic__title {
+	color: var(--secondary-color);
+	font-size: 1.25rem;
+	font-weight: 600;
+	margin-bottom: 12px;
+}
+
+.card-topic__content {
+	margin: 0 24px 32px 24px;
+}
+
+.card-topic__content p {
+	font-size: 0.8rem;
+	color: #fff;
+}
+
+.card-topic__content ul {
+	list-style: circle;
+}
+
+#info .card-topic__content p {
+	color: #fff;
+}
+
+.card-topic__sub-title {
+	color: var(--primary-light-color);
+	font-size: 1rem;
+	font-weight: 600;
+	margin: 12px 0;
+}
+
+.move-keys {
+	empty-cells: hide;
+}
+
+.move-keys td {
+	width: 42px;
+	height: 42px;
+	border: 2px solid var(--primary-color);
+	border-radius: 4px;
+	text-align: center;
+	font-size: 1.4rem;
+}
+
+.stop-key {
+	width: 100px;
+	height: 42px;
+	border: 2px solid var(--primary-color);
+	border-radius: 4px;
+	padding: 3px 8px;
+	margin: 24px 0 0 10px;
+	box-sizing: border-box;
+}

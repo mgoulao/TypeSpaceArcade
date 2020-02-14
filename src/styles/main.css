@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css?family=Audiowide|Days+One|Orbitron|Russo+One&display=swap');
+:root {
+	--main-background-color: #000;
+	--main-border-color: #fff;
+	--main-border-hover: #cecece;
+	--main-text-color-hover: #cecece;
+	--primary-color: #880b18;
+	--primary-light-color: #e81224;
+	--secondary-color: #2cadc7;
+	--secondary-light-color: #7dc0ce;
+	--scrollbar-background: #fff;
+	--game-width-hd: 1336px;
+	--game-height-hd: 642px;
+	--game-width-full-hd: 1890px;
+	--game-height-full-hd: 909px;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	/* font-family: 'Russo One', sans-serif; */
+	/* font-family: 'Audiowide', cursive; */
+	/* font-family: 'Days One', sans-serif; */
+	font-family: 'Orbitron', sans-serif;
+	font-size: 18px;
+	letter-spacing: 3px;
+	user-select: none;
+	overflow-y: hidden;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	background: var(--main-background-color);
+	overflow-y: hidden;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+
+#app {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+}
+
+.buttons-list {
+	list-style: none;
+	display: flex;
+}
+
+#game-leave {
+	margin-left: 9px;
+}
+
+.tri-button {
+	position: relative;
+	cursor: pointer;
+	width: 24px;
+	height: 24px;
+	margin: 0 4px;
+	user-select: none;
+}
+
+.tri-button--content {
+	position: absolute;
+}
+
+.tri-button.upside {
+	transform: rotate(180deg);
+}
+
+.tri-button.upside .tri-button--content {
+	transform: rotate(-180deg);
+}
+
+.tri-button .tri-button--content {
+	top: 5px;
+	left: 5px;
+}
+
+.tri-button--outer {
+	position: absolute;
+	background-color: var(--main-border-color);
+	top: 0;
+	left: 0;
+	text-align: left;
+}
+
+.tri-button:hover .tri-button--outer {
+	background-color: var(--main-border-hover);
+}
+
+.tri-button:active .tri-button--outer, .tri-button:focus .tri-button--outer {
+	background-color: var(--secondary-color);
+}
+
+.tri-button--outer:before, .tri-button--outer:after {
+	content: '';
+	position: absolute;
+	background-color: inherit;
+}
+
+.tri-button--outer, .tri-button--outer:before, .tri-button--outer:after {
+	width: 21px;
+	height: 21px;
+	border-top-right-radius: 30%;
+}
+
+.tri-button--outer {
+	transform: rotate(-60deg) skewX(-30deg) scale(1, .866);
+}
+
+.tri-button--outer:before {
+	transform: rotate(-135deg) skewX(-45deg) scale(1.414, .707) translate(0, -50%);
+}
+
+.tri-button--outer:after {
+	transform: rotate(135deg) skewY(-45deg) scale(.707, 1.414) translate(50%);
+}
+
+.tri-button--inner {
+	position: absolute;
+	background-color: var(--main-background-color);
+	top: 3px;
+	left: 2px;
+	text-align: left;
+}
+
+.tri-button--inner:before, .tri-button--inner:after {
+	content: '';
+	position: absolute;
+	background-color: inherit;
+}
+
+.tri-button--inner, .tri-button--inner:before, .tri-button--inner:after {
+	width: 17px;
+	height: 17px;
+	border-top-right-radius: 30%;
+}
+
+.tri-button--inner {
+	transform: rotate(-60deg) skewX(-30deg) scale(1, .866);
+}
+
+.tri-button--inner:before {
+	transform: rotate(-135deg) skewX(-45deg) scale(1.414, .707) translate(0, -50%);
+}
+
+.tri-button--inner:after {
+	transform: rotate(135deg) skewY(-45deg) scale(.707, 1.414) translate(50%);
+}
+
+.tsa-btn {
+	width: 36px;
+	height: 36px;
+	display: flex;
+	background: #fff;
+	border: none;
+	outline: none;
+	line-height: 32px;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.tsa-btn:hover {
+	background: var(--main-text-color-hover);
+}
+
+.tsa-btn:active {
+	background: var(--primary-color);
+}
+
+.tsa-btn--outline {
+	background: #000;
+	border: 2px solid var(--primary-color);
+	border-radius: 6px;
+	color: #fff
+}
+
+.tsa-btn--outline:hover {
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.tsa-btn--outline:active {
+	background: var(--primary-color);
+}
+
+a {
+	color: var(--secondary-color);
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--secondary-light-color);
+}
+
+a:active {
+	color: #fff;
+}
+
+.tsa-link {
+	cursor: pointer;
+}
+
+.tsa-link.disabled {
+	color: #828282;
+	z-index: -1;
+}
+
+.tsa-link:hover {
+	color: var(--main-text-color-hover);
+}
+
+.tsa-link:active, .tsa-link:focus {
+	color: var(--primary-light-color);
+}
+
+@media screen and (max-width: 1024px) {
+	html {
+		font-size: 16px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	html {
+		font-size: 80%;
+	}
+}
