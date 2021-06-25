@@ -1,4 +1,3 @@
-import ship2 from '../game/assets/ship2.png';
 import { startGame } from '../game/main';
 import MainMenu from './mainMenu';
 import ServerMenu from './serverMenu';
@@ -25,7 +24,6 @@ export default class Menu {
 
 		this.gameStarted = false;
 		this.showMainMenu();
-		this.setupListeners();
 	}
 
 	resetData() {
@@ -124,6 +122,7 @@ export default class Menu {
 			optionsList.appendChild(item);
 		}
 		menuOptions.appendChild(optionsList);
+    this.setupListeners();
 	}
 
 	handleSliderBtn(value) {
